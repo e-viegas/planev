@@ -1,0 +1,660 @@
+body{
+	display : flex ;
+	flex-direction : column ;
+	margin : 0px ;
+}
+
+body, input{
+	font-family : Garamond ;
+}
+
+h1{
+	display : flex ;
+	align-items : center ;
+	justify-content : center ;
+
+	margin-top : 20px ;
+	margin-bottom : 20px ;
+	color : red ;
+}
+
+h2{
+	text-align : center ;
+	text-decoration : underline ;
+}
+
+
+@media (min-width : 1221px){
+	h1{
+		font-size : 3.4em ;
+	}
+
+	h2{
+		font-size : 2.1em ;
+	}
+
+	body{
+		font-size : 1.3em ;
+	}
+
+	input{
+		font-size : 1.04em ;
+	}
+}
+
+
+@media (min-width : 794px) and (max-width : 1221px){
+	h1{
+		font-size : 3.4em ;
+	}
+
+	h2{
+		font-size : 1.7em ;
+	}
+
+	body{
+		font-size : 1.05em ;
+	}
+
+	input{
+		font-size : 0.84em ;
+	}
+}
+
+
+@media (max-width : 794px){
+	h1{
+		font-size : 2.7em ;
+	}
+
+	h2{
+		font-size : 1.4em ;
+	}
+
+	body{
+		font-size : 0.84em ;
+	}
+
+	input{
+		font-size : 0.67em ;
+	}
+}
+
+
+
+
+
+/*			PAGE Accueil			*/
+/* Entête */
+.header{
+	display : flex ;
+	flex-direction : column-reverse ;
+	background-image : url("munchkin.jpg") ;
+	background-size : cover ;
+	background-repeat : no-repeat ;
+	height : 28.55vw ;
+	overflow : hidden ;
+}
+
+.header div{
+	display : flex ;
+	flex-direction : row-reverse ;
+}
+
+#auteur{
+	margin-top : 5.2vw ;
+	margin-right : 3vw ;
+
+	width : 250px ;
+	height : 1.83vw ;
+
+	border-radius : 15px 15px 0 0 ;
+	border-style : outset outset none outset ;
+	border-color : rgb(0, 128, 0) ;
+	background-color : rgb(0, 149, 0) ;
+	color : rgb(0, 149, 0) ;
+
+
+	display : flex ;
+	justify-content : center ;
+	align-items : center ;
+}
+
+#auteur:hover{
+	margin-top : 4.21vw ;
+	height : 2.82vw ;
+	color : white ;
+	font-weight: bold ;
+	font-size : 1.3em ;
+}
+
+.header h1{
+	text-shadow : 8px 8px 9px #666 ;
+	margin-left : 19.03vw ;
+}
+
+
+
+
+/* Le menu */
+.wrap{
+	background-color : black ;
+	display : flex ;
+	justify-content : space-around ;
+}
+
+#contenu{
+	margin : 50px ;
+	padding : 25px ;
+	border-radius : 20px ;
+
+	width : 90% ;
+	background-color : white ;
+
+	display : flex ;
+	flex-direction : column ;
+	align-items : center ;
+}
+
+
+/* Les noeuds de l'arborescence */
+.noeud{
+	width : 90% ;
+	margin : 25px ;
+
+	border-style : solid ;
+	border-radius : 15px ;
+	background-color : rgb(217, 215, 216) ;
+
+	overflow : hidden ;
+	padding-top : 0px ;
+
+	display : flex ;
+	flex-direction : column ;
+}
+
+/*.noeud:hover{
+	height : auto ;
+	padding-top : 0px ;
+}*/
+
+.noeud a{
+	color : black ;
+	text-decoration : none ;
+	height : 100% ;
+	display : flex ;
+}
+
+.noeud a div{
+	display : flex ;
+	flex-direction : row ;
+	align-items : center ;
+}
+
+.noeud a div div{
+	background-image : url("spite.jpg") ;
+	background-position : -70px -50px ;
+
+	width : 50px ;
+	height : 50px ;
+	margin-left : 20px ;
+	margin-right : 20px ;
+}
+
+.noeud a div p{
+	font-weight : bold ;
+	font-size : 1.7em ;
+}
+
+.noeud ul{
+	display : none ;
+	list-style : none ;
+	margin-left : 8% ;
+}
+
+.noeud:hover ul{
+	display : block ;
+}
+
+.noeud ul li a{
+	list-style : none ;
+	margin-left : 8% ;
+}
+
+
+
+
+
+/*			PAGE Lagny - sur - Marne			*/
+/* Entête */
+#enteteLSM{
+	background-image : url("lagny.jpg") ;
+	background-repeat : no-repeat ;
+	background-position : center center ;
+	background-size : cover ;
+
+	display : flex ;
+	flex-direction : column ;
+	justify-content : space-between ;
+	align-items : center ;
+	height : 400px ;
+}
+
+#back{
+	width : 100% ;
+	display : flex ;
+	flex-direction : row-reverse ;
+	justify-content : space-between ;
+}
+
+#back ul{
+	list-style : none ;
+}
+
+#back ul li a{
+	display : flex ;
+	width : 53px ;
+	height : 50px ;
+
+	background-image : url("back.jpg") ;
+	background-size : contain ;
+	background-repeat : no-repeat ;
+
+	padding : 0vw ;
+	margin-right : 1.5vw
+}
+
+
+#title{
+	display : flex ;
+	flex-direction : column ;
+	justify-content : space-around ;
+	align-items : center ;
+	height : 350px ;
+}
+
+#title div{
+	display : flex ;
+	flex-direction : column ;
+	align-items : center ;
+	justify-content : center ;
+	margin : 0px ;
+}
+
+#title div p{
+	margin : 0px ;
+}
+
+
+
+
+/* Contenu */
+#contenuLSM{
+	background-image : url("plan lagny.jpg") ;
+	background-repeat : no-repeat ;
+	background-position : center center ;
+	background-size : cover ;
+
+	display : flex ;
+	flex-direction : column ;
+	align-items : center ;
+}
+
+#contenuLSM p{
+	width : 90% ;
+	text-align : justify ;
+}
+
+
+@media (min-width : 1077px){
+	#lagny, #galerie, #contenuLSM p{
+		width : 980px ;
+	}
+}
+
+
+@media (max-width : 1076px){
+	#lagny, #galerie, /#contenuLSM p{
+		width : 90vw ;
+	}
+}
+
+
+
+
+/* Lagny */
+#lagny{
+	display : flex ;
+	margin-top : 20px ;
+	margin-bottom : 20px ;
+}
+
+#lagny div{
+	padding-left : 10px ;
+	padding-right : 10px ;
+
+}
+
+
+@media (min-width : 1077px){
+	#lagny{
+		flex-direction : row ;
+	}
+
+	#lagny div{
+		width : 30% ;
+	}
+}
+
+
+@media (max-width : 1077px){
+	#lagny{
+		flex-direction : column ;
+	}
+
+	#lagny div{
+		width : 100% ;
+	}
+}
+
+
+#lagny div p{
+	width : 100% ;
+	text-align : justify ;
+}
+
+#sHist, #mHist, #sPtrm, #mPtrm, #sSport, #mSport{
+	display : none ;
+}
+
+#pHist, #pPtrm, #pSport{
+	display : flex ;
+}
+
+#mHist:hover, #mPtrm:hover, #pHist:hover, #pPtrm:hover, #pSport:hover, #pSport:hover{
+	background-color : green ;
+	color : white ;
+}
+
+#mHist:focus, #mPtrm:focus, #pHist:focus, #pPtrm:focus, #pSport:focus, #pSport:focus{
+	background-color : red ;
+	color : white ;
+}
+
+
+
+
+/* Blason de Lagny */
+#blason{
+	display : flex ;
+	flex-direction : row ;
+	justify-content : space-between ;
+	align-items : center ;
+}
+
+
+@media (min-width : 1077px){
+	#blason a, #blason a img{
+		width : 91px ;
+		height : 100px ;
+	}
+
+	#blason div, #blason div p{
+		width : 703px
+	}
+
+	#blason div{
+		margin-left : 40px ;
+		margin-top : 5px ;
+		margin-bottom : 5px ;
+	}
+}
+
+
+@media (max-width : 1077px){
+	#blason a, #blason a img{
+		width : 8.45vw ;
+		height : 9.29vw ;
+	}
+
+	#blason div, #blason div p{
+		width : 65.27vw ;
+	}
+
+	#blason div{
+		margin-left : 3.72vw ;
+		margin-top : 0.46vw ;
+		margin-bottom : 0.46vw ;
+	}
+}
+
+
+#info{
+	font-size : 0.77em ;
+	font-style : italic ;
+	text-align : right ;
+}
+
+
+
+
+/* Galerie de photos */
+#galerie{
+	/* Disposition en ligne */
+	display : flex ;
+	flex-direction : row ;
+	justify-content : space-between ;
+	align-items : center ;
+}
+
+#next, #previous{
+	background-image : url("spite.jpg") ;
+}
+
+#next{
+	background-position : 0px 0px ;
+}
+#next:hover{
+	background-position : -40px 0px ;
+}
+
+#next:focus{
+	background-position : -90px 0px ;
+}
+
+#previous{
+	background-position : -140px 0px ;
+}
+#previous:hover{
+	background-position : -180px 0px ;
+}
+#previous:focus{
+	background-position : -230px 0px ;
+}
+
+#galerie div{
+	/* couleurs */
+	background : rgba(255, 255, 255, 0.42) ;
+
+	/* masquer ce qui dépasse */
+	overflow : hidden ;
+
+	/* Disposition en ligne */
+	display : flex ;
+	flex-direction : row ;
+	justify-content : space-around ;
+	align-items : left ;
+}
+
+#galerie div div{
+	margin-left : 0px ;
+
+	display : flex ;
+	flex-direction : column ;
+	justify-content : space-between ;
+}
+
+#galerie div div p{
+	text-align : center ;
+}
+
+
+@media (min-width : 1077px){
+	#next, #previous{
+		width : 40px ;
+		height : 40px ;
+	}
+
+	#next:hover, #previous:hover, #next:focus, #previous:focus{
+		width : 50px ;
+		height : 50px ;
+	}
+
+	#galerie div{
+		width : 800px ;
+		height : 480px ;
+	}
+
+	#galerie div div img{
+		width : 800px ;
+		height : 450px ;
+	}
+
+	#galerie div div p{
+		margin-top : 4px ;
+		width : 800px ;
+	}
+}
+
+
+/*@media (max-width : 1077px){
+	#next, #previous{
+		width : 3.71vw ;
+		height : 3.71vw ;
+	}
+
+	#next:hover, #previous:hover, #next:focus, #previous:focus{
+		width : 4.64vw ;
+		height : 4.64vw ;
+	}
+
+	#galerie div{
+		width : 74.28vw ;
+		height : 44.57vw ;
+	}
+
+	#galerie div div img{
+		width : 74.28vw ;
+		height : 41.78vw ;
+	}
+
+	#galerie div div p{
+		margin-top : 0.37vw ;
+		width : 74.28vw ;
+	}
+}*/
+
+
+
+
+/* Géolocalisation */
+#geolocal{
+	display : flex ;
+	justify-content : space-around  ;
+	margin-bottom : 10px ;
+	align-items : center ;
+}
+
+#geolocal table{
+	border-bottom : ridge ;
+	border-right : ridge ;
+	border-left : ridge ;
+}
+
+#geolocal table td{
+	border-top : ridge ;
+}
+
+
+@media (min-width : 1000px){
+	#geolocal table{
+		width : 320px ;
+	}
+
+	#map{
+		margin-left : 26px ;
+		width : 640px ;
+		height : 335px ;
+	}
+}
+
+
+@media (max-width : 999px){
+	#geolocal table{
+		width : 30vw ;
+	}
+
+	#map{
+		margin-left : 2.6vw ;
+		width : 64vw ;
+		height : 33.5vw ;
+	}
+}
+
+
+
+
+
+/*			PAGE sig			*/
+#viewDiv{
+	width : 100% ;
+	height : 100% ;
+}
+
+
+
+
+
+/*			PAGE Morpions			*/
+#mrp{
+	width : 233px ;
+	height : 233px ;
+	background-image : url("./morpions/morpions.jpg") ;
+
+	display : flex ;
+	flex-direction : column ;
+}
+
+.line{
+	height : 77px ;
+	display : flex ;
+	flex-direction : row ;
+}
+
+.spacing{
+	height : 1px ;
+}
+
+.case{
+	width : 77px ;
+	overflow : hidden ;
+	background-image : url("./morpions/symboles.jpg") ;
+	background-position : "0px 0px" ;
+}
+
+.colonn{
+	width : 1px ;
+}
+
+
+
+
+
+/* Pied de page */
+.piedpage{
+	display : flex ;
+	justify-content : center ;
+	align-items : center ;
+	height : 40px ;
+	background-color : rgba(0, 128, 64, 0.42) ;
+}

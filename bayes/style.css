@@ -1,0 +1,121 @@
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+
+.column{
+  flex-direction: column;
+}
+
+
+body{
+  justify-content: space-around;
+  margin: 0px;
+  font-family: "Garamond";
+}
+
+
+h1{
+  justify-content: center;
+  height: 43px;
+  margin: 10px;
+  font-family: 'Cabin Sketch';
+  font-size: 2.6em;
+}
+
+
+#results{
+  width: 90vw;
+  height: calc(90vh - 63px);
+  justify-content: space-around;
+}
+
+
+#interface{
+  height: 100%;
+  width: 13%;
+  justify-content: space-around;
+}
+
+
+#deg{
+  width: 100%;
+}
+
+
+#res{
+  justify-content: center;
+  height: 75px;
+  width: 100%;
+  border-style: groove;
+  border-width: 2px;
+}
+
+
+#res span strong{
+  font-size: 2em;
+  font-family: 'Cabin Sketch';
+}
+
+
+.img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  height: 42px;
+  width: 42px;
+  margin: 10px;
+}
+
+
+#add{
+  background-image: url("add.png");
+}
+#remove{
+  background-image: url("minus.png");
+}
+#edit{
+  background-image: url("edit.png");
+}
+#copy{
+  background-image: url("copy.png");
+}
+
+
+
+#footer{
+  justify-content: space-around;
+  height: 10vh;
+}
+
+
+#footer a{
+  font-family: 'Cabin Sketch';
+}
+
+
+#popup{
+  z-index: 43;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  justify-content: center;
+  visibility: hidden;
+}
+
+
+#popup form{
+  height: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-style: ridge;
+  border-width: 2px;
+  border-radius: 15px;
+}
+
+
+#edittable input{
+  margin: 4px;
+}

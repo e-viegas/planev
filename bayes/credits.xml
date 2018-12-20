@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<credits>
+  <provider name="https://www.flaticon.com/">
+    <author name="Hanan">
+      <icon href="add.png"/>
+    </author>
+
+    <author name="Smashicons">
+      <icon href="minus.png" use="Remove hypothesis"/>
+      <icon href="edit.png"/>
+    </author>
+
+    <author name="Gregor Cresnar">
+      <icon href="copy.png"/>
+    </author>
+
+    <author name="Pixel Buddha">
+      <icon href="warning.png"/>
+    </author>
+  </provider>
+
+  <provider name="https://www.youtube.com/">
+    <author name="Christophe Michel" channel="Hygiène Mentale">
+      <video
+        name="Ep28 Le Sophisme du Procureur (et quelques autres leçons Bayésiennes)"
+        lang="fr"
+        licence="Creative Commons CC-BY-NC-ND"
+      />
+    </author>
+  </provider>
+
+  <provider name="https://fonts.googleapis.com/">
+    <author name="Google">
+      <font name="Cabin Sketch" />
+    </author>
+  </provider>
+</credits>

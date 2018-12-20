@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang = "fr">
+    <!-- Les métadonnées -->
+    <head>
+		  <meta charset="UTF-8">
+		  <meta name="Lagny-sur-Marne">
+      <meta name="Author" content="Erwan VIEGAS">
+	    <meta name="Description" content="Ville d'origine">
+	    <link rel="shortcut icon" href="favicon.ico">
+		  <title>Lagny-sur-Marne</title>
+
+      <!-- Les feuilles de styles CSS -->
+      <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"/>
+	    <link rel="stylesheet" href="style.css">
+    </head>
+
+  <!-- Le corps -->
+	<body>
+
+    <!-- L'entête' -->
+		<div id="enteteLSM">
+      <div id="back"><ul><li><a href="./../index.html"></a></li></ul></div>
+
+      <div id="title">
+			     <h1>LAGNY–SUR–MARNE</h1>
+
+			      <div>
+	            <p><strong>D&eacutepartement :</strong> Seine-et-Marne (077)</p>
+	            <p><strong>R&eacutegion :</strong> &Icircle-de-France</p>
+			      </div>
+      </div>
+		</div>
+
+    <!-- Les différents contenus (textes, photos, cartes) -->
+		<div id="contenuLSM">
+      <p>Lagny-sur-Marne est une ville, située en Seine-et-Marne, à l'est de Paris, au sein de la ville nouvelle de Marne-la-Vallée.
+        Avec ses 20 301 habitants et ses 3 530 hab/km², Lagny est une ville moyenne. Son Histoire est bien plus
+        ancienne que les villes des alentours. Néanmoins, la desserte de cette ville n'est pas optimale. En effet, aucune
+        autoroute ne la traverse mais uniquement une voie rapide la rejoint à l'A104. D'un point de vue ferroviaire, elle est
+        desservie par la ligne P entre Chelles et Meaux. Elle possède un très bon réseau de bus.</p>
+
+      <!-- Présentation textuelle de Lagny -->
+			<div id="lagny">
+				<div>
+					<h2>Histoire</h2>
+					<p>Lagny-sur-Marne est cr&eacute&eacutee en 644, par le moine irlandais Saint-Fursy de P&eacuteronne, apr&egraves avoir accompli
+						un miracle &agrave la cour d'Erchinoald, roi de Neustrie. &Agrave cette &eacutepoque, Lagny se r&eacutesuma &agrave l'abbaye
+						Saint-Pierre de Lagny, l'actuelle mairie de Lagny. Lors des raids vikings, ces derniers ont d&eacutevast&eacutes les
+						vall&eacutees de la Seine et de la Marne : Lagny n'y &eacutechappa pas.</p>
+
+					<p>Le si&egravecle de gloire de Lagny est le XIIIe si&egravecle. En effet, d&egraves 1023, Lagny-sur-Marne est rattach&eacutee
+						au Comt&eacute de Champagne. Elle est devenue, gr&acircce aux comtes de Champagne, une des 4 fameuses foires de Champagne
+						(avec Provins, Troyes et Bar-sur-Aube). Ainsi, depuis cette &eacutepoque, Lagny est connue comme une ville marchande. Son
+						d&eacuteclin commen&ccedila lors de la Guerre de Cent Ans : &agrave cause de son immense richesse, la ville a &eacutet&eacute
+						br&ucircl&eacutee 7 fois durant la guerre. La peste noire a ruiné sa population. Les cit&eacutes-&Eacutetat italiennes
+						prendront le relais.</p>
+
+            <input name="plus" value="En plus >>>" type="button" id="pHist" onClick="app:plus('sHist', 'pHist', 'mHist')">
+
+					<p id="sHist"> Durant la période moderne, Lagny deviendra une petite bourgade de campagne bien tranquille. Elle rejoignit
+            le domaine royal en 1523, date à laquelle le blason actuel de la ville a été choisi. En 1792, elle rejoint le nouveau
+            département de la Seine - et - Marne. Quatre ans plus tard, l'abbaye Saint-Pierre, a été vendue à la toute nouvelle commune de
+            Lagny. À cette époque, elle était une plaque tournante dans le commerce du Brie L'arrivée du chemin de fer en 1849 a permis
+            un essor industriel assez conséquent. En 1933, un terrible accident de train a eu lieu à la gare de Lagny-Thorigny-Pomponne.
+            En 1968, elle est intégrée à la nouvelle ville de Marne-la-Vallée. </p>
+
+            <input name="moins" value="En moins <<<" type="button" id="mHist" onClick="app:moins('sHist', 'pHist', 'mHist')">
+				</div>
+
+				<div>
+					<h2>Patrimoine</h2>
+					<p>Lagny est une ville médiévale. Elle a donc un certain nombre de bâtiments, construits à cette époque, et qui sont devenus
+            actuellement des lieux incontournables du tourisme local.</p>
+
+          <p>Le premier monument à voir est l'<strong>Abbaye de Saint-Pierre</strong> de Lagny. Comme vous pouvez le lire dans
+            la section "Histoire", ce bâtiment est le plus ancien de Lagny. Sa première fonction fut d'héberger un monastère bénédictin,
+            construit par Saint-Furcy de Péronne en 644. Détruit par les Vikings, il fût reconstruit en 1019. Lors de la Révolution
+            Française, l'abbaye fût de nouveau pillée par les révolutionnaires exacerbés, puis changea de fonction : il devint un hôpital
+            militaire, utilisé lors des Guerres Napoléoniennes. L'inscription <em>Hôpital militaire</em> persiste encore de nos jours.
+            Il n'hébergea le conseil municipal de Lagny qu'à partir de 1842.</p>
+
+            <input name="plus" value="En plus >>>" type="button" id="pPtrm" onClick="app:plus('sPtrm', 'pPtrm', 'mPtrm')">
+
+          <p id="sPtrm"> Le second lieu, que je vais vous présenter, n'est pas un bâtiment mais une place. Il s'agit de la
+            <strong>Place de la Fontaine</strong>. Cette place est le coeur du centre-ville de Lagny. Au milieu de cette place se trouve
+            l'unique fontaine de Lagny, dont la légende raconte que Saint-Furcy fit jaillir ... <em>magiquement</em> de l'eau. La place
+            est intégralement entourée de boutiques ou d'agences. Elle est le lieu du marché depuis qu'il existe (XIIIe siècle). L'un
+            des bâtiments les plus emblématiques de cette place est <strong>Les Cinq - Pignons</strong>. C'est ici que se déroula la
+            foire de Lagny, organisée par les Comtes de Champagne. Actuellement, il est occupé par des boutiques.</p>
+
+            <input name="moins" value="En moins <<<" type="button" id="mPtrm" onClick="app:moins('sPtrm', 'pPtrm', 'mPtrm')">
+				</div>
+
+        <div>
+					<h2>Sports</h2>
+					<p>Il existe dans Lagny une multitude de clubs de sports.</p>
+
+          <p>À proximité du port de Lagny-sur-Marne, en face du chemin de fer, des clubs sportifs proposent des activités nautiques.
+            À cause du manque de vent et du danger des péniches, naviguant sur la Marne, la plaisance est à proscire ici. Par contre,
+            il est possible de s'embarquer sur des kayaks, des canoës ou voire même des avirons.</p>
+
+          <p>Mais la ville dispose d'autres infrastructures sportives autour du Lycée Van Dongen, dans le qurtier sportif. Ainsi, la
+            ville possède une piscine, appelée Parc Aquatique de Marne-et-Gondoire, à côté du lycée. En face du même lycée, des cours
+            de tennis sont ouverts au public. En bas de la rue se trouve le parc athlétique de la ville avec son stade de 400m, son
+            gymnase dédié au Handball, et de ses multiples terrains. En face, l'un des 5 gymnases de Lagny, celui de
+	          <a href="https://fr.wikipedia.org/wiki/Thierry_Rey">Thierry Rey</a> été construit en l'hommage du judoka.</p>
+
+          <input name="plus" value="En plus >>>" type="button" id="pSport" onClick="app:plus('sSport', 'pSport', 'mSport')">
+
+          <p id="sSport">Les trois sports, pour lesquelles Lagny-sur-Marne possède un bon niveau, sont le Rugby, le Handball et le
+            <a href="https://fr.wikipedia.org/wiki/Hockey_subaquatique">Hockey subaquatique</a>. D'ailleurs, l'un des plus vieux
+            clubs de Rugby de France est <a href="http://www.aslagnyrugby.net">celui de Lagny-sur-Marne</a>.</p>
+
+          <input name="moins" value="En moins <<<" type="button" id="mSport" onClick="app:moins('sSport', 'pSport', 'mSport')">
+				</div>
+			</div>
+
+      <!-- Le blason avec le lien vers le site officiel -->
+      <div id = "blason">
+        <a href = "http://www.lagny-sur-marne.fr/">
+          <img src = "blason.jpg" alt = "Blason de Lagny">
+        </a>
+
+        <div>
+          <p> Les armes de Lagny-sur-Marne se blasonnent ainsi : </p>
+          <p> <em> D’azur à la lettre L gothique d’or à dextre, au clou du même à sénestre, le tout couronné de couronne royale
+              ouverte, aussi d’or. </em> </p>
+          <p id = "info"> le blason contient le lien vers le site officiel </p>
+        </div>
+      </div>
+
+      <!-- Les photos -->
+      <h2> Galerie photos </h2>
+
+			<div id = "galerie">
+        <!-- 1ère case : bouton PRECEDENT -->
+        <input name = "previous" type = "button" onClick = "app:previous()" id = "previous">
+
+        <!-- 2e case : photo actuellement présentée -->
+				<div>
+          <div class = "photos">
+            <img src = "./galerie/fontaine.jpg" alt = "Place de la Fontaine">
+            <p> Place de la Fontaine, coeur de Lagny, au milieu des boutiques </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/église.jpg" alt = "&Eacuteglise de Lagny">
+            <p> L'église Notre-Dame-des-Ardents, principale église de Lagny </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/mairie.jpg" alt = "Hôtel de Ville">
+            <p> Façade extérieure de l'Hôtel de Ville (ex - Abbaye Saint-Pierre) </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/rue des marchés.jpg" alt = "Rue des Marchés">
+            <p> Rue des Marchés, véritable centre commercial à ciel ouvert </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/Cinq-pignons.jpg" alt = "Les 5 pignons">
+            <p> Les 5 pignons, entre l'Hôtel de Ville et la Place de la Fontaine </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/bords de marne.jpg" alt = "Lagny, vue de Thorigny">
+            <p> Les bords de Marne de Lagny, vue depuis Thorigny-sur-Marne </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/marne.jpg" alt = "La Marne, vue d'un pont">
+            <p> La Marne, vue depuis le pont Maunoury, entre Lagny et Thorigny </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/forteresse.jpg" alt = "Les vestiges de la muraille de Lagny">
+            <p> Les vestiges de la dernière tour de guet de la muraille de Lagny </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/gouvernes.jpg" alt = "Mairie de Gouvernes">
+            <p> Mairie de Gouvernes </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/Marcel Proust.jpg" alt = "Espace Marcel Proust">
+            <p> Espace Marcel Proust à Guermantes </p>
+          </div>
+
+          <div class = "photos">
+            <img src = "./galerie/Château de Guermantes.jpg" alt = "Château de Guermantes">
+            <p> Château de Guermantes, le long de la route vers Torcy </p>
+          </div>
+        </div>
+
+        <!-- 3e case : bouton SUIVANT -->
+        <input name = "next" type = "button" onClick = "app:next()" id = "next">
+			</div>
+
+      <!-- La géolocalisation de Lagny-sur-Marne -->
+			<h2> Situation géographique </h2>
+
+			<div id = "geolocal">
+        <!-- Les distances aux autres villes -->
+				<table>
+					<tr>
+						<td> Chessy (Disneyland) </td>
+						<td> 5,7 km </td>
+					</tr>
+
+					<tr>
+						<td> Champs - sur - Marne </td>
+						<td> 9,8 km </td>
+					</tr>
+
+					<tr>
+						<td> Paris </td>
+						<td> 26,2 km </td>
+					</tr>
+
+          <tr>
+						<td> Lille </td>
+						<td> 197 km </td>
+					</tr>
+
+          <tr>
+						<td> Strasbourg </td>
+						<td> 367 km </td>
+					</tr>
+
+          <tr>
+						<td> Nantes </td>
+						<td> 372 km </td>
+					</tr>
+
+					<tr>
+						<td> Lyon </td>
+						<td> 383 km </td>
+					</tr>
+
+					<tr>
+						<td> Saint - &Eacutetienne </td>
+						<td> 403 km </td>
+					</tr>
+
+          <tr>
+						<td> Bordeaux </td>
+						<td> 514 km </td>
+					</tr>
+
+          <tr>
+						<td> Toulouse </td>
+						<td> 595 km </td>
+					</tr>
+
+					<tr>
+						<td> Marseille </td>
+						<td> 654 km </td>
+					</tr>
+
+          <tr>
+						<td> Ajaccio </td>
+						<td> 906 km </td>
+					</tr>
+
+					<tr>
+						<td> Saint - Denis (R&eacuteunion) </td>
+						<td> 9 359 km </td>
+					</tr>
+				</table>
+
+        <!-- La carte LEAFLET -->
+				<div id = "map"> </div>
+			</div>
+		</div>
+
+    <!-- Le pied-de-page -->
+		<div class = "piedpage">
+			<p> Ecrit par Erwan Viegas. CC BY-NC-SA </p>
+		</div>
+	</body>
+
+  <!-- Le script + la bibiothèque leaflet -->
+  <script src = "https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"> </script>
+  <script src = "app.js"> </script>
+</html>

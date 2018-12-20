@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Erwan Viegas">
+    <title>DrawErV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="resources/favicon.ico">
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div class="header img"></div>
+
+    <!-- Application frame -->
+    <div class="wrap">
+      <div class="app">
+        <!-- Nav -->
+        <ul id="nav" class="bloc flex">
+          <li id="import" class="button img icon"></li>
+          <li id="export" class="button img icon"></li>
+          <li id="point" class="button img icon"></li>
+          <li id="polyline" class="button img icon"></li>
+          <li id="polygon" class="button img icon"></li>
+          <li id="pentagon" class="button img icon"></li>
+        </ul>
+
+        <!-- Canvas -->
+        <canvas id="drawing" class="bloc">
+          Your browser does not support the application DrawErV
+        </canvas>
+
+        <!-- Forms -->
+        <div id="form" class="bloc"></div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <span>Licence CC-BY-NC-ND</span>
+        <ul>
+          <li class="img icon cc"></li>
+          <li class="img icon by"></li>
+          <li class="img icon nc"></li>
+          <li class="img icon nd"></li>
+        </ul>
+        <span>Crédits</span>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="menu.js" charset="utf-8"></script>
+  </body>
+</html>

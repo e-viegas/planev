@@ -1,0 +1,147 @@
+body{
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+ul{
+  list-style: none;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  font-weight: bold;
+  color: rgb(0, 127, 14);
+  text-decoration: underline;
+}
+
+.img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon{
+  width: 35px;
+  height: 35px;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  background-image: url("resources/drawerv.png");
+  background-size: cover;
+}
+
+.wrap{
+  width: 100%;
+  height: calc(100% - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.bloc{
+  height: calc(100% - 10px);
+  margin: 5px;
+}
+
+#nav, #form{
+  width: 10%;
+  flex-direction: column;
+}
+
+#nav{
+  border-color: black;
+  border-style: ridge;
+  border-width: 0px 2px 0px 0px;
+}
+
+.button{
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#import{
+  background-image: url("resources/import.png");
+}
+#export{
+  background-image: url("resources/export.png");
+}
+#point{
+  background-image: url("resources/point.png");
+}
+#polyline{
+  background-image: url("resources/polyline.png");
+}
+#polygon{
+  background-image: url("resources/polygon.png");
+}
+#pentagon{
+  background-image: url("resources/pentagon.png");
+}
+
+canvas{
+  width: 80%;
+}
+
+.footer{
+  width: 100%;
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 1.2em;
+}
+
+.footer ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 4px;
+  margin-left: 4px;
+}
+
+.footer ul li{
+  margin: 4px;
+}
+
+.cc{
+  background-image: url("../resources/cc.png");
+}
+.by{
+  background-image: url("../resources/cc-by.png");
+}
+.nc{
+  background-image: url("../resources/cc-nc.png");
+}
+.nd{
+  background-image: url("../resources/cc-nd.png");
+}

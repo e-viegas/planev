@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="author" content="Erwan Viegas">
+    <title>BayEsV</title>
+
+    <!-- Link -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch"
+      rel="stylesheet">
+  </head>
+
+  <body class="flex column">
+    <!-- ===== HEADER ===== -->
+    <h1 class="flex">BAYESV</h1>
+
+    <!-- ===== OUTPUT ===== -->
+    <div id="results" class="flex">
+      <canvas id="canvas">
+        Be careful, your browser must not support the canvas technology !!
+      </canvas>
+
+      <div id="interface" class="flex column">
+        <form action="index.html" method="post">
+          <select id="chooseDeg"></select>
+        </form>
+
+        <div id="deg">
+          <span>Results</span>
+          <div id="res" class="flex column"></div>
+        </div>
+
+        <div class="flex">
+          <div>
+            <div id="add" class="img"></div>
+            <div id="edit" class="img"></div>
+          </div>
+
+          <div>
+            <div id="remove" class="img"></div>
+            <div id="copy" class="img"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== INPUT ===== -->
+    <div id="popup" class="flex column">
+      <form id="addform" action="index.html" method="post" class="flex column">
+        <div class="row">
+          <label for="number">Number : </label>
+          <input type="number" id="number" value="1">
+        </div>
+
+        <div class="row">
+          <label for="reset">Reset ? </label>
+          <input type="checkbox" id="reset">
+        </div>
+
+        <div class="row">
+          <input type="button" id="okAdd" value="OK">
+          <input type="button" id="cancelAdd" value="Cancel">
+        </div>
+      </form>
+
+      <form id="editform" action="index.html" method="post" class="flex column">
+        <table id="edittable"></table>
+
+        <div class="row">
+          <input type="button" id="okEdit" value="OK">
+        </div>
+      </form>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div id="footer" class="flex column">
+      <span>Application made by Erwan Viegas.</span>
+      <span>Commons Creative CC-BY-NC-ND.</span>
+      <a href="credits.xml" target="_blank">CREDITS</a>
+    </div>
+  </body>
+
+  <script src="bayes.js" charset="utf-8"></script>
+</html>

@@ -17,9 +17,9 @@
       "img":"./bayes/bayes.png"
     },{
       "title":"Drone Maker",
-      "href":"./dronemaker-ensg/",
+      "href":"./dronemaker/",
       "explanation":"Site du club de drones de l'<a href=\"http://www.ensg.eu/\" target=\"_blank\">ENSG</a>",
-      "img":"./dronemaker-ensg/resources/dronemaker.png"
+      "img":"./dronemaker/resources/dronemaker.png"
     },{
       "title":"DrawErV",
       "href":"./drawerv/",

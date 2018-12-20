@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="author" content="DroneMaker ENSG">
+    <title>DroneMaker ENSG</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="resources/favicon.ico">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch"
+      rel="stylesheet">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+      integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+      crossorigin=""></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div id="header">
+      <div id="logo" class="image"></div>
+      <div id="nav">
+        <p>DroneMaker ENSG</p>
+
+        <ul>
+          <li id="tab-welcome">
+            <div id="icon-welcome" class="icon"></div>
+            <span>Accueil</span>
+          </li>
+
+          <li id="tab-team">
+            <div id="icon-team" class="icon"></div>
+            <span>Equipe</span>
+          </li>
+
+          <li id="tab-const">
+            <div id="icon-const" class="icon"></div>
+            <span>Construction</span>
+          </li>
+
+          <li id="tab-steering">
+            <div id="icon-steering" class="icon"></div>
+            <span>Pilotage</span>
+          </li>
+
+          <li id="tab-contacts">
+            <div id="icon-contacts" class="icon"></div>
+            <span>Contacts</span>
+          </li>
+
+          <li id="tab-login">
+            <div id="icon-login" class="icon"></div>
+            <span>Connexion</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="wrap" class="image">
+      <!-- tab 'ACCUEIL' -->
+      <div id="cont-welcome" class="contents">
+        <p id="welcome">
+          DroneMaker ENSG est un club de drones à l'ENSG. Brève introduction ...
+        </p>
+
+        <div id="news">
+          <div id="news-title">
+            <div id="news-icon" class="image"></div>
+            <h2>Actualités</h2>
+          </div>
+
+          <ul>
+            <li>
+              <div>
+                <span class="author">Raphaël Dupont</span>
+                <span class="date">36 janvier 4020</span>
+              </div>
+              <div class="limit"></div>
+              <span class="news-cont">
+                Et defueris diutius in indiscretus agnitus eadem tempus et hortatore diutius defueris discesseris clientes unde.
+              </span>
+            </li>
+
+            <li>
+              <div>
+                <span class="author">Emma Dubois</span>
+                <span class="date">43/77/7342</span>
+              </div>
+              <div class="limit"></div>
+              <span class="news-cont">
+                Procedente igitur mox tempore cum adventicium nihil inveniretur, relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- tab 'EQUIPE' -->
+      <div id="cont-team" class="contents">
+        <ul id="menu-team">
+            <li id="tab-team-dir">Direction</li>
+            <li id="tab-team-steer">Département de pilotage</li>
+            <li id="tab-team-const">Département de construction</li>
+            <li id="tab-team-other">Autre</li>
+        </ul>
+
+        <div id="people">
+          <div id="cont-team-dir" class="contents">
+            <ul class="row">
+              <li>
+                <h2>Bureau</h2>
+                <ul class="team">
+                  <li class="person">
+                    <div class="photo" id="boulze"></div>
+                    <span><strong>Hugo Boulze</strong></span>
+                    <span><strong>Président</strong></span>
+                  </li>
+                  <li class="person">
+                    <div class="photo" id="toussaint-1"></div>
+                    <span><strong>Céline Toussaint</strong></span>
+                    <span>Trésorière</span>
+                  </li>
+                  <li class="person">
+                    <div class="photo" id="bouillet"></div>
+                    <span><strong>Marie-Laure Bouillet</strong></span>
+                    <span>Secrétaire</span>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <h2>Responsables</h2>
+                <ul class="team">
+                  <li class="person">
+                    <div class="photo" id="favreau"></div>
+                    <span><strong>Arthur Favreau</strong></span>
+                    <span>Responsable de communication</span>
+                  </li>
+                  <li class="person">
+                    <div class="photo" id="falala"></div>
+                    <span><strong>Wandrille Falala</strong></span>
+                    <span>Responsable de logistique</span>
+                  </li>
+                  <li class="person">
+                    <div class="photo" id="le-port"></div>
+                    <span><strong>Quentin Le Port</strong></span>
+                    <span>Responsable de logistique</span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div id="cont-team-steer" class="contents">
+            <ul class="team">
+              <li class="person">
+                <div class="photo" id="franche"></div>
+                <span><strong>Julien Franche</strong></span>
+              </li>
+              <li class="person"><span>
+                <div class="photo" id="wenclik"></div>
+                <span><strong>Laura Wenclik</strong></span>
+              </li>
+            </ul>
+          </div>
+
+          <div id="cont-team-const" class="contents">
+            <ul class="row">
+              <li>
+                <h2>Direction du département</h2>
+                <ul class="team">
+                  <li class="person">
+                    <div class="photo"></div>
+                    <span><strong>Siméon Gruel</strong></span>
+                  </li>
+                  <li class="person">
+                    <div class="photo"></div>
+                    <span><strong>Céline Toussaint</strong></span>
+                  </li>
+                  <li class="person">
+                    <div class="photo"></div>
+                    <span><strong>Athur Coqué</strong></span>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <h2>Chef de construction</h2>
+                <ul class="team">
+                  <li class="person">
+                    <div class="photo"></div>
+                    <span><strong>Florent Geniet</strong></span>
+                  </li>
+                  <li class="person">
+                    <div class="photo"></div>
+                    <span><strong>Céline Toussaint</strong></span>
+                  </li>
+                  <li class="person">
+                    <div class="photo"></div>
+                    <span><strong>Baudouin Branche</strong></span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div id="cont-team-other" class="contents">
+            <ul class="team">
+              <li class="person">Hugo Bontempi : Directeur du département de course</li>
+              <li class="person">Erwan Viegas : Webmaster</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- tab 'CONSTRUCTION' -->
+      <div id="cont-const" class="contents">
+        Construire des drones !!
+      </div>
+
+      <!-- tab 'PILOTAGE' -->
+      <div id="cont-steering" class="contents">
+        Piloter des drones !!
+      </div>
+
+      <!-- tab 'CONTACTS' -->
+      <div id="cont-contacts" class="contents">
+        <div id="contacts">
+          <p>6 et 8 avenue Blaise Pascal, Champs-sur-Marne, France</p>
+          <ul>
+            <li>
+              <span>Machin Bidule</span>
+              <span>Responsable du hamac</span>
+              <span>machin.bidule@ensg.eu</span>
+            </li>
+          </ul>
+        </div>
+
+        <div id="map"></div>
+      </div>
+
+      <div id="footer">
+        <p>Licence</p>
+      </div>
+    </div>
+
+    <script src="dronemaker.js" charset="utf-8"></script>
+  </body>
+</html>

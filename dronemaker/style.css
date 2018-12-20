@@ -1,0 +1,382 @@
+body{
+  font-family: Garamond;
+  margin: 0px;
+  height: 100vh;
+}
+
+
+.image, .icon, .photo{
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.image, .icon{
+  background-size: contain;
+}
+
+
+ul{
+  list-style: none;
+}
+
+
+/* 1. Header */
+#header{
+  width: 100%;
+  height: 18%;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(0, 153, 51);
+}
+
+
+#logo{
+  height: 18vh;
+  width: 18vw;
+  background-image: url("resources/dronemaker.png");
+}
+
+
+#nav{
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#nav p{
+  height : 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  font-size: 3.8em;
+  font-family: 'Cabin Sketch';
+  color: white;
+}
+
+
+/* 1.1 Navigation toolbox */
+#nav ul{
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+
+#nav ul li{
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Cabin Sketch';
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 12px 12px 0px 0px;
+}
+
+
+#nav ul li:hover, #menu-team li:hover{
+  font-weight: bold;
+  font-size: 1.2em;
+  color: black;
+  background-color: white;
+}
+
+
+/* 1.2 Icons */
+.icon{
+  width: 5.6vh;
+  height: 5.6vh;
+  margin-right: 0.5vw;
+}
+
+
+#icon-welcome{
+  background-image: url("resources/welcome.png");
+}
+#icon-team{
+  background-image: url("resources/team.png");
+}
+#icon-const{
+  background-image: url("resources/const.png");
+}
+#icon-steering{
+  background-image: url("resources/steering.png");
+}
+#icon-contacts{
+  background-image: url("resources/contacts.png");
+}
+#icon-login{
+  background-image: url("resources/login.png");
+}
+
+
+/* 2 Contents */
+#wrap{
+  height: 82%;
+  background-image: url("resources/background.png");
+  background-blend-mode: lighten;
+}
+
+
+.contents{
+  display: flex;
+  visibility: hidden;
+  height: 0px;
+  overflow: hidden;
+}
+
+
+/* 2.1 For WELCOME */
+#cont-welcome{
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+#welcome, #news{
+  width: 42%;
+  height: 77%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+
+
+#welcome{
+  border-style: ridge;
+  border-width: 5px;
+  border-radius: 15px;
+}
+
+
+/* news */
+#news{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+#news-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cabin Sketch';
+}
+
+
+#news-icon{
+  width: 43px;
+  height: 43px;
+  background-image: url("resources/news.png");
+  margin-right: 10px;
+}
+
+
+#news ul{
+  width: 100%;
+  height: 80%;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+
+#news ul li{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  border-style: double;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 3px;
+}
+
+
+#news ul li div{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.author, .date, .news-cont{
+  margin: 4px;
+}
+
+
+.limit{
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+
+/* 2.2 For TEAM */
+#menu-team{
+  width: 17.15%;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 1vw;
+  border-radius: 0px 0px 26px 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 153, 51);
+}
+
+
+#menu-team li{
+  width: 95%;
+  margin: 5px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-radius: 12px 0px 0px 12px;
+  padding: 7px;
+  color: white;
+}
+
+
+#people{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 81.8%;
+}
+
+
+.row, .team{
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.row h2, .team h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row{
+  flex-direction: column;
+}
+
+
+.team{
+  align-items: center;
+  flex-direction: row;
+}
+
+
+.person{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.photo{
+  width: 99px;
+  height: 132px;
+  background-size: contain;
+}
+
+
+#boulze{
+  background-image: url("resources/boulze.png");
+}
+#favreau{
+  background-image: url("resources/favreau.png");
+}
+
+
+/* 2.5 For CONTACTS */
+#cont-contacts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+#contacts{
+  width: 43%;
+}
+
+
+#contacts p{
+  margin: 0px;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+
+#contacts ul{
+  width: 96%;
+  console.log(val); none;
+  margin: 2%;
+  padding: 0px;
+}
+
+
+#contacts ul li{
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+}
+
+
+#contacts ul li span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+}
+
+
+#map{
+  width: 43%;
+  height: 80%;
+  border-style: ridge;
+  border-width: 3px;
+  border-radius: 12px;
+}
+
+
+/* 3 Footer */
+#footer{
+  width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#footer:hover{
+  font-weight: bold;
+}

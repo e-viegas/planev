@@ -1,7 +1,10 @@
 body{
   margin: 0px;
-  width: 100vw;
-  height: 100vh;
+}
+
+::selection {
+  color: white;
+  background-color: rgb(0, 127, 14);
 }
 
 ul{
@@ -27,81 +30,175 @@ a:hover{
   background-size: contain;
 }
 
+
+/* Header */
+#header{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+#logo{
+  width: 95px;
+  height: 100px;
+  background-image: url("./resources/drawerv.png");
+}
+
+#nav{
+  width: calc(100% - 95px);
+  height: 100px;
+}
+
+/* Main tabs */
+#maintabs{
+  width: 100%;
+  height: 38%;
+  background-color: rgb(135, 176, 236);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.tab{
+  width: 153px;
+  height: 30px;
+  margin-right: 10px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.tab:hover{
+  background-color: white;
+  color: rgb(25, 94, 192);
+}
+
+.tab div{
+  width: 26px;
+  height: 26px;
+  margin-right: 17px;
+}
+
+/* Buttons */
+#buttons{
+  width: 100%;
+  height: 62%;
+}
+
+.section{
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  height: 0px;
+}
+
+.button{
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.button .tooltip {
+  visibility: hidden;
+  background-color: black;
+  color: white;
+  font-size: 0.77em;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 73;
+  top: 105px;
+}
+
+.button .tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.button:hover .tooltip {
+  visibility: visible;
+}
+
+
+/* Workbench */
+canvas{
+  width: 100%;
+  height: calc(100vh - 104px);
+}
+
+
+/* Pop up */
+.popup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  z-index: 73;
+  background-color: rgba(177, 177, 177, 0.5);
+  visibility: hidden;
+}
+
+#regularpolygonform{
+  background-color: white;
+  flex-direction: column;
+  border-color: black;
+  border-style: outset;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+#regularpolygonform *{
+  margin: 5px;
+}
+
+.okcancel{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.okcancel input{
+  width: 73px;
+}
+
+/* Footer */
 .icon{
   width: 35px;
   height: 35px;
 }
 
-.flex{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header{
-  width: 100%;
-  height: 150px;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  background-image: url("resources/drawerv.png");
-  background-size: cover;
-}
-
-.wrap{
-  width: 100%;
-  height: calc(100% - 150px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.app{
-  width: 100%;
-  height: calc(100% - 50px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
-.bloc{
-  height: calc(100% - 10px);
-  margin: 5px;
-}
-
-#nav{
-  width: 10%;
-  flex-direction: column;
-  border-color: black;
-  border-style: ridge;
-  border-width: 0px 2px 0px 0px;
-}
-
-.button{
-  width: 26px;
-  height: 26px;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.button:hover{
-  background-color: rgb(173, 173, 173);
-}
-
-canvas{
-  width: 90%;
-}
-
 .footer{
-  width: 100%;
+  z-index: 43;
+  position: absolute;
+  width: 703px;
   height: 43px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   font-size: 1.2em;
+  top: calc(100vh - 43px);
+  left: calc((100vw - 703px)/2);
 }
 
 .footer ul{
@@ -128,4 +225,8 @@ canvas{
 }
 .nd{
   background-image: url("../resources/cc-nd.png");
+}
+
+.footer a{
+  font-family: 'Cabin Sketch';
 }

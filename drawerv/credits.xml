@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<credits>
+  <provider name="https://www.flaticon.com/">
+    <author name="Freepik">
+      <icon href="back.png"/>
+      <icon href="delete.png"/>
+      <icon href="export.png"/>
+      <icon href="import.png"/>
+      <icon href="point.png"/>
+      <icon href="polyline.png"/>
+    </author>
+
+    <author name="Smashicons">
+      <icon href="line.png"/>
+      <icon href="edit.png"/>
+    </author>
+
+    <author name="Those Icons">
+      <icon href="move.png"/>
+    </author>
+
+    <author name="Pixel perfect">
+      <icon href="cursor.png"/>
+    </author>
+  </provider>
+
+  <provider name="https://fonts.googleapis.com/">
+    <author name="Google">
+      <font name="Cabin Sketch" />
+    </author>
+  </provider>
+</credits>

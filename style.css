@@ -4,6 +4,11 @@ body{
   height: 100vh;
 }
 
+::selection {
+  color: white;
+  background-color: rgb(0, 127, 14);
+}
+
 ul{
   list-style: none;
   margin: 0px;
@@ -57,9 +62,9 @@ a:hover{
   color: rgb(0, 127, 14);
   font-weight: bold;
   font-size: 1.2em;
-  border-style: ridge;
+  border-style: outset;
   border-radius: 15px 15px 0px 0px;
-  border-width: 5px 5px 0px 5px;
+  border-width: 2px 2px 0px 2px;
   border-color: rgb(0, 96, 9);
   display: flex;
   justify-content: center;
@@ -176,6 +181,10 @@ a:hover{
 }
 .nd{
   background-image: url("resources/cc-nd.png");
+}
+
+.footer a{
+  font-family: 'Cabin Sketch';
 }
 
 

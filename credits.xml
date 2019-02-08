@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<credits>
+  <provider name="https://www.flaticon.com/">
+    <author name="Chanut">
+      <icon href="list.png"/>
+    </author>
+  </provider>
+
+  <provider name="https://fonts.googleapis.com/">
+    <author name="Google">
+      <font name="Cabin Sketch" />
+    </author>
+  </provider>
+</credits>

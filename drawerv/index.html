@@ -6,39 +6,68 @@
     <title>DrawErV</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="resources/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch"
+      rel="stylesheet">
   </head>
 
   <body>
-    <!-- Header -->
-    <div class="header img"></div>
+    <!-- Pop-ups -->
+    <div id="regularpolygonpopup" class="popup">
+      <div class="flex" id="regularpolygonform">
+        <label>Number of edges for this regular polygon</label>
+        <input type="number" id="number" value="3">
 
-    <!-- Application frame -->
-    <div class="wrap">
-      <div class="app">
-        <!-- Nav -->
-        <ul id="nav" class="bloc flex"></ul>
-
-        <!-- Canvas -->
-        <canvas id="drawing" class="bloc">
-          Be careful, your browser must not support the canvas technology !!
-        </canvas>
-      </div>
-
-      <!-- Footer -->
-      <div class="footer">
-        <span>Licence CC-BY-NC-ND</span>
-        <ul>
-          <li class="img icon cc"></li>
-          <li class="img icon by"></li>
-          <li class="img icon nc"></li>
-          <li class="img icon nd"></li>
-        </ul>
-        <span>Crédits</span>
+        <div class="okcancel">
+          <input type="button" id="ok" value="OK">
+          <input type="button" id="cancel" value="Cancel">
+        </div>
       </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="createmenu.js" charset="utf-8"></script>
-    <script src="draw.js" charset="utf-8"></script>
+    <!-- Footer -->
+    <div class="footer">
+      <span><strong>Auteur</strong> Erwan Viegas | <strong>Licence</strong> CC-BY-NC-ND</span>
+      <ul>
+        <li class="img icon cc"></li>
+        <li class="img icon by"></li>
+        <li class="img icon nc"></li>
+        <li class="img icon nd"></li>
+      </ul>
+      <a href="credits.xml" target="_blank">CREDITS</a>
+    </div>
+
+    <!-- Navigation -->
+    <div id="header">
+      <div id="logo" class="img"></div>
+      <div id="nav">
+        <ul id="maintabs"></ul>
+        <div id="buttons"></div>
+      </div>
+    </div>
+
+    <!-- Workbench -->
+    <canvas id="workbench">Your browser doesn't support this technology</canvas>
   </body>
+
+  <script src="createmenu.js" charset="utf-8"></script>
+  <script src="draw.js" charset="utf-8"></script>
+
+  <script type="text/javascript">
+  /* Variable to open a file */
+    var rawFile = new XMLHttpRequest();
+
+    // Process when the file is opened
+    rawFile.onreadystatechange = function (){
+      if(rawFile.readyState === 4){
+        if(rawFile.status === 200 || rawFile.status == 0){
+          mainmenu(JSON.parse(rawFile.responseText));
+          connect();
+        }
+      }
+    }
+
+    // Open the file
+    rawFile.open("GET", "menu.json", true);
+    rawFile.send(null);
+  </script>
 </html>

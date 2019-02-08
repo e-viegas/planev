@@ -16,10 +16,10 @@
       "explanation":"Calculatrice probabiliste avec le théorème de Bayes",
       "img":"./bayes/bayes.png"
     },{
-      "title":"Drone Maker",
+      "title":"DroneMaker ENSG",
       "href":"./dronemaker/",
       "explanation":"Site du club de drones de l'<a href=\"http://www.ensg.eu/\" target=\"_blank\">ENSG</a>",
-      "img":"./dronemaker/resources/dronemaker.png"
+      "img":"./resources/dronemaker.png"
     },{
       "title":"DrawErV",
       "href":"./drawerv/",

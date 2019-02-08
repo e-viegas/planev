@@ -4,8 +4,32 @@
 }
 
 
+.img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon{
+  width: 35px;
+  height: 35px;
+}
+
+
 .column{
   flex-direction: column;
+}
+
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  font-weight: bold;
+  color: rgb(0, 127, 14);
+  text-decoration: underline;
 }
 
 
@@ -27,7 +51,7 @@ h1{
 
 #results{
   width: 90vw;
-  height: calc(90vh - 63px);
+  height: calc(90vh - 44px);
   justify-content: space-around;
 }
 
@@ -84,14 +108,46 @@ h1{
 }
 
 
-
-#footer{
-  justify-content: space-around;
-  height: 10vh;
+.footer{
+  width: 100%;
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 1.2em;
 }
 
+.footer ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 4px;
+  margin-left: 4px;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
 
-#footer a{
+.footer ul li{
+  margin: 4px;
+}
+
+.cc{
+  background-image: url("../resources/cc.png");
+}
+.by{
+  background-image: url("../resources/cc-by.png");
+}
+.nc{
+  background-image: url("../resources/cc-nc.png");
+}
+.nd{
+  background-image: url("../resources/cc-nd.png");
+}
+
+.footer a{
   font-family: 'Cabin Sketch';
 }
 

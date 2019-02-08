@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<credits>
+  <provider name="https://www.flaticon.com/">
+    <author name="Dave Gandy">
+      <icon href="welcome.png"/>
+    </author>
+	
+	<author name="Freepik">
+      <icon href="team.png"/>
+	  <icon href="const.png"/>
+	  <icon href="steering.png"/>
+	  <icon href="login.png"/>
+	  <icon href="news.png"/>
+	  <icon href="drone.png"/>
+    </author>
+	
+	<author name="Smashicons">
+      <icon href="contacts.png"/>
+    </author>
+	
+	<author name="Roundicons">
+      <icon href="unknown.png"/>
+    </author>
+  </provider>
+
+  <provider name="https://fonts.googleapis.com/">
+    <author name="Google">
+      <font name="Cabin Sketch" />
+    </author>
+  </provider>
+</credits>

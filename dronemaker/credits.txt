@@ -1,8 +1,0 @@
-home : Dave Gandy
-team : Freepik
-const : Freepik
-steering : Freepik
-contacts : Smashicons
-news : Freepik
-drone : Freepik
-? : Roundicons

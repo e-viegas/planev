@@ -1,0 +1,76 @@
+[
+  {
+    "tab": "DrawErV",
+    "icon": "./resources/drawerv-icon.png",
+
+    "buttons": [
+      {
+        "name": "New image",
+        "id": "new",
+        "icon": "./resources/new-file.png"
+      }, {
+        "name": "Import",
+        "id": "import",
+        "icon": "./resources/import.png"
+      }, {
+        "name": "Export",
+        "id": "export",
+        "icon": "./resources/export.png"
+      }
+    ]
+  }, {
+    "tab": "Draw",
+    "icon": "./resources/writing.png",
+
+    "buttons": [
+      {
+        "name": "Point",
+        "id": "point",
+        "icon": "./resources/point.png"
+      }, {
+        "name": "Polyline",
+        "id": "polyline",
+        "icon": "./resources/polyline.png"
+      }, {
+        "name": "Polygon",
+        "id": "polygon",
+        "icon": "./resources/polygon.png"
+      }, {
+        "name": "Regular triangle",
+        "id": "triangle",
+        "icon": "./resources/triangle.png"
+      }, {
+        "name": "Regular polygon",
+        "id": "hexagon",
+        "icon": "./resources/hexagon.png"
+      }, {
+        "name": "Circle",
+        "id": "circle",
+        "icon": "./resources/circle.png"
+      }
+    ]
+  }, {
+    "tab": "Edit",
+    "icon": "./resources/edit.png",
+
+    "buttons": [
+      {
+        "name": "Select",
+        "id": "cursor",
+        "icon": "./resources/cursor.png"
+      }, {
+        "name": "Edit",
+        "id": "edit",
+        "icon": "./resources/edit.png"
+      }, {
+        "name": "Move",
+        "id": "move",
+        "icon": "./resources/move.png"
+      }, {
+        "name": "Remove",
+        "id": "delete",
+        "icon": "./resources/delete.png"
+      }
+    ]
+  }
+]

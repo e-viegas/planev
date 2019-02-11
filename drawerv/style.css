@@ -107,6 +107,10 @@ a:hover{
   margin-bottom: 3px;
 }
 
+.button:hover{
+  box-shadow: 0px 5px 5px rgb(173, 173, 173);
+}
+
 .button .tooltip {
   visibility: hidden;
   background-color: black;

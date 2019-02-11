@@ -38,7 +38,11 @@ function createbutton(bt, section) {
 }
 
 /*
-
+  BRIEF Create a new tab with buttons
+  PARAM t Object to describe the new tab with three fields :
+    - tab : name of this tab
+    - icon to find the button icon
+	- buttons : list of buttons for this tab
 */
 function createtab(t) {;
   div = document.createElement("div");
@@ -99,10 +103,13 @@ function activate(newtab) {
   document.getElementById(tab).style.color = "rgb(25, 94, 192)";
   document.getElementById(tab).style.backgroundColor = "white";
   document.getElementById("tab-" + tab).style.visibility = "visible";
-  document.getElementById("tab-" + tab).style.height = "56px";
+  document.getElementById("tab-" + tab).style.height = "100%";
 }
 
-
+/*
+  BRIEF Change the active tab (close the former one and open the new one)
+  PARAM newtab Name of the new active tab
+*/
 function change(newtab) {
   if (tab !== newtab) {
     deactivate();

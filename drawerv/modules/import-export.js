@@ -4,6 +4,8 @@
   PARAM ev Current event
 */
 function newfile(ev) {
+  draw:endDraw();
+
   // reset the set 'items'
   for (var prop in items) {
     delete items[prop];
@@ -39,28 +41,37 @@ function newfile(ev) {
   (à terminer)
 */
 function exportCanvas(ev) {
-  var fname = "test.json";
-  var type = fname.split(".")[1];
+  var fname;
+  endDraw();
+  document.getElementById("exportpopup").style.visibility = "visible";
+  document.getElementById("fname").value = name;
+  document.getElementById("ext").value = "json";
 
-  if (type === "svg") {
-    exportSVG(fname);
-  } else {
-    exoprtJSON(fname);
-  }
+  // png
+  /* context.clearRect(0, 0, width, height);
+  var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); //Convert image to 'octet-stream' (Just a download, really)
+  window.location.href = img;*/
 }
 
 /*
   BRIEF Export the figure on the canvas as a JSON text file
   PARAM filename Name of the file
 */
-function exoprtJSON(fname) {
+function exportJSON(fname) {
   ajax.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      window.open(fname, "_blank");
+      console.log(ajax.responseText);
     }
   };
 
-  var url = "download.php?fname=" + fname + "&cont=" + JSON.stringify(items);
+  var cont = {
+    "origin": {"x": x0, "y": y0},
+    "selected": selected,
+    "items": items
+  };
+
+  var url = "download.php?fname=" + fname
+    + "&cont=" + JSON.stringify(cont);
   ajax.open("GET", url, true);
   ajax.send();
 }
@@ -103,7 +114,8 @@ function exportSVG(fname) {
 
   ajax.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      window.open(fname, "_blank");
+      window.open("./files/" + fname, "_blank");
+      // remove the temporary file
     }
   };
 
@@ -120,6 +132,8 @@ function exportSVG(fname) {
 */
 function importCanvas(ev) {
   type = "svg";
+  endDraw();
+
   // contents = "{\"0\":{\"geometry\":\"POINT\",\"x\":260,\"y\":160.5}}";
   contents = "<svg width=\"291\" height=\"236.5\"><polygon "
     + "points=\"170,146.5 253,228.5 283,116\" "

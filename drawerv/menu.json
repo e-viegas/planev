@@ -36,7 +36,7 @@
         "id": "polygon",
         "icon": "./resources/polygon.png"
       }, {
-        "name": "Regular triangle",
+        "name": "Equilateral triangle",
         "id": "triangle",
         "icon": "./resources/triangle.png"
       }, {
@@ -70,6 +70,17 @@
         "name": "Remove",
         "id": "delete",
         "icon": "./resources/delete.png"
+      }
+    ]
+  }, {
+    "tab": "Advanced",
+    "icon": "./resources/advanced-tool.png",
+
+    "buttons": [
+      {
+        "name": "Center/Barycenter",
+        "id": "cursor",
+        "icon": "./resources/barycenter.png"
       }
     ]
   }

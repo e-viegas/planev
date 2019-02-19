@@ -12,8 +12,9 @@
 
   <body>
     <!-- Pop-ups -->
+    <!-- Regular polygon -->
     <div id="regularpolygonpopup" class="popup">
-      <div class="flex" id="regularpolygonform">
+      <div class="flex form" id="regularpolygonform">
         <label>Number of edges for this regular polygon</label>
         <input type="number" id="number" value="3">
 
@@ -24,9 +25,31 @@
       </div>
     </div>
 
+    <!-- Export -->
+    <div id="exportpopup" class="popup">
+      <div class="flex form" id="exportform">
+        <label>Choose a filename</label>
+        <input type="text" name="fname" value="" id="fname">
+
+        <div>
+          <label>Extension</label>
+          <select id="ext">
+            <option value="json">JS Object Notation</option>
+            <option value="svg">Scalable Vector Graphics</option>
+            <option value="png">Portable Network Graphics</option>
+          </select>
+        </div>
+
+        <div class="okcancel">
+          <input type="button" id="okExport" value="OK">
+          <input type="button" id="cancelExport" value="Cancel">
+        </div>
+      </div>
+    </div>
+
     <!-- Footer -->
     <div class="footer">
-      <span><strong>Auteur</strong> Erwan Viegas | <strong>Licence</strong> CC-BY-NC-ND</span>
+      <span><strong>Author</strong> Erwan Viegas | <strong>Licence</strong> CC-BY-NC-ND</span>
       <ul>
         <li class="img icon cc"></li>
         <li class="img icon by"></li>
@@ -38,7 +61,10 @@
 
     <!-- Navigation -->
     <div id="header">
-      <div id="logo" class="img"></div>
+      <a id="logo" class="img" href="..">
+        <span class="tooltip">Go back to La Planev</span>
+      </a>
+
       <div id="nav">
         <ul id="maintabs"></ul>
         <div id="buttons"></div>
@@ -49,29 +75,14 @@
     <canvas id="workbench">Your browser doesn't support this technology</canvas>
   </body>
 
+  <!-- Scripts -->
   <script src="modules/createmenu.js" charset="utf-8"></script>
   <script src="modules/variables.js" charset="utf-8"></script>
   <script src="modules/functions.js" charset="utf-8"></script>
   <script src="modules/import-export.js" charset="utf-8"></script>
   <script src="modules/draw.js" charset="utf-8"></script>
-  <script src="draw.js" charset="utf-8"></script>
-
-  <script type="text/javascript">
-  /* Variable to open a file */
-    var rawFile = new XMLHttpRequest();
-
-    // Process when the file is opened
-    rawFile.onreadystatechange = function (){
-      if(rawFile.readyState === 4){
-        if(rawFile.status === 200 || rawFile.status == 0){
-          mainmenu(JSON.parse(rawFile.responseText));
-          connect();
-        }
-      }
-    }
-
-    // Open the file
-    rawFile.open("GET", "menu.json", true);
-    rawFile.send(null);
-  </script>
+  <script src="modules/edit.js" charset="utf-8"></script>
+  <script src="modules/shortcuts.js" charset="utf-8"></script>
+  <script src="modules/events.js" charset="utf-8"></script>
+  <script src="modules/main.js" charset="utf-8"></script>
 </html>

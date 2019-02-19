@@ -32,7 +32,7 @@ function createbutton(bt, section) {
   image.style.backgroundImage = "url(\"" + bt.icon + "\")";
   span = document.createElement("span");
   span.classList.add("tooltip");
-  span.innerHTML = bt.name;
+  span.innerText = bt.name;
   image.appendChild(span);
   section.appendChild(image);
 }
@@ -58,7 +58,7 @@ function createtab(t) {;
   image.style.backgroundImage = "url(\"" + t.icon + "\")";
   div.appendChild(image);
   span = document.createElement("span");
-  span.innerHTML = t.tab;
+  span.innerText = t.tab;
   div.appendChild(span);
   maintabs.appendChild(div);
 }

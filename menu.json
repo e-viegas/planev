@@ -1,30 +1,35 @@
 {
   "pages":[
     {
-      "title":"Accueil",
+      "title":"Accueil/Welcome",
       "href":"./welcome/",
-      "explanation":"Information globale sur ce site",
+      "explanation":"Global information on this website",
       "img":"./resources/welcome.png"
     },{
       "title":"Lagny-sur-Marne",
 	    "href":"lagny-sur-marne/",
-      "explanation":"Article sur <a href=\"http://www.lagny-sur-marne.fr/\" target=\"_blank\">Lagny-sur-Marne</a>",
+      "explanation":"Article on the French town <a href=\"http://www.lagny-sur-marne.fr/\" target=\"_blank\">Lagny-sur-Marne</a>",
       "img":"./lagny-sur-marne/blason.png"
     },{
       "title":"BayEsV",
       "href":"./bayes/",
-      "explanation":"Calculatrice probabiliste avec le théorème de Bayes",
+      "explanation":"Calculator for the Bayes theorem",
       "img":"./bayes/bayes.png"
     },{
       "title":"DroneMaker ENSG",
       "href":"./dronemaker/",
-      "explanation":"Site du club de drones de l'<a href=\"http://www.ensg.eu/\" target=\"_blank\">ENSG</a>",
+      "explanation":"Website of drone club of the <a href=\"http://www.ensg.eu/\" target=\"_blank\">ENSG</a>",
       "img":"./resources/dronemaker.png"
     },{
       "title":"DrawErV",
       "href":"./drawerv/",
-      "explanation":"Application de dessin vectoriel SVG",
+      "explanation":"Application of vectorial drawing (SVG or JSON)",
       "img":"./resources/drawerv.png"
+    },{
+      "title":"Mentions légales/Legal notices",
+      "href":"./notices/",
+      "explanation":"Legal notices according to the French law",
+      "img":"./resources/planev.png"
     }
   ]
 }

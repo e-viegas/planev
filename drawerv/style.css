@@ -45,6 +45,11 @@ a:hover{
   background-image: url("./resources/drawerv.png");
 }
 
+#logo:hover{
+  box-shadow: 0px 5px 5px rgb(173, 173, 173);
+  z-index: 73;
+}
+
 #nav{
   width: calc(100% - 95px);
   height: 100px;
@@ -111,7 +116,7 @@ a:hover{
   box-shadow: 0px 5px 5px rgb(173, 173, 173);
 }
 
-.button .tooltip {
+.button .tooltip, #logo .tooltip {
   visibility: hidden;
   background-color: black;
   color: white;
@@ -124,7 +129,7 @@ a:hover{
   top: 105px;
 }
 
-.button .tooltip::after {
+.button .tooltip::after, #logo .tooltip::after {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -135,7 +140,7 @@ a:hover{
   border-color: transparent transparent black transparent;
 }
 
-.button:hover .tooltip {
+.button:hover .tooltip, #logo:hover .tooltip {
   visibility: visible;
 }
 
@@ -162,7 +167,7 @@ canvas{
   visibility: hidden;
 }
 
-#regularpolygonform{
+.form{
   background-color: white;
   flex-direction: column;
   border-color: black;
@@ -171,7 +176,7 @@ canvas{
   border-radius: 5px;
 }
 
-#regularpolygonform *{
+.form *{
   margin: 5px;
 }
 

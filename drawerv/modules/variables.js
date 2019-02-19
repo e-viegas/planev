@@ -54,6 +54,9 @@ var selected = Array();
 // Name of the image
 var name = "";
 
+// Current operation
+var op = null;
+
 // Fill the canvas background
 ctx.fillStyle = "rgb(255, 255, 153)";
 ctx.fillRect(0, 0, width, height);

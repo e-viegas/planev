@@ -45,9 +45,13 @@ function shortcut(ev) {
     addRegularPolygon(ev);
   } else if (ev.key === "c") {
     addCircle(ev);
-  } else if (ev.key === "u") {
+  } else if (ev.key === "k") {
     cursor(ev);
   } else if (ev.key === "Delete") {
     clearCanvas(ev);
+  } else if (ev.key === "d") {
+    deselectAll();
+  } else if (ev.key === "a") {
+    selectAll();
   }
 }

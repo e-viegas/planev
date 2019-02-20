@@ -10,14 +10,44 @@ var selection = {
 
 // ========== DELETE ==========
 /*
+
+
+*/
+function usedForShapes(idpoint) {
+  var shape;
+  var res = false;
+
+  if (items[idpoint].geometry !== "POINT") {
+    return false;
+  }
+
+  Object.keys(items).forEach(function (key) {
+    shape = items[key];
+
+    if (shape.geometry === "POLYLINE" || shape.geometry === "POLYGON") {
+      if (shape.vertices.indexOf(parseInt(idpoint)) >= 0) {
+        res = true;
+      }
+    } else if (shape.geometry === "CIRCLE") {
+      if (shape.center === parseInt(idpoint)) {
+        res = true;
+      }
+    }
+  })
+
+  return res;
+}
+
+/*
   BRIEF Clear the selected items from the canvas and the set 'items'
   PARAM ev Current event
 */
 function clearCanvas(ev) {
   // Remove the selection from the set 'items'
   for (var k = 0; k < selected.length; k ++) {
-    console.log(selected[k]);
-    delete items[selected[k]];
+    if (! usedForShapes(k)) {
+      delete items[selected[k]];
+    }
   }
 
   // clear the canvas and draw again
@@ -208,6 +238,39 @@ function cursor(ev) {
   }
 }
 
+/*
+  BRIEF Deselect all items selected
+*/
+function deselectAll() {
+  selected.length = 0;
+  ctx.clearRect(0, 0, width, height);
+  ctx.fillStyle = "rgb(255, 255, 153)";
+  ctx.fillRect(0, 0, width, height);
+  maxx = 0;
+  maxy = 0;
+  drawall();
+}
+
+/*
+  BRIEF Select all items of the set 'items'
+*/
+function selectAll() {
+  selected.length = 0;
+
+  // select all items
+  Object.keys(items).forEach(function (key) {
+    selected.push(parseInt(key));
+  })
+
+  // draw again
+  ctx.clearRect(0, 0, width, height);
+  ctx.fillStyle = "rgb(255, 255, 153)";
+  ctx.fillRect(0, 0, width, height);
+  maxx = 0;
+  maxy = 0;
+  drawall();
+}
+
 
 // ========== MOVE ==========
 /*
@@ -246,10 +309,12 @@ function endMoving(ev) {
 }
 
 
-// /!\ /!\ temporary code source /!\ /!\
-var zoom = 1;
-
-canvas.addEventListener("wheel", function(ev) {
+// ========== ZOOM ==========
+/*
+  BRIEF Change the current zoom with the wheel
+  PARAM ev Current event (wheel)
+*/
+function changeZoom(ev) {
   zoom += ev.deltaY/100;
 
   if (zoom < 0) {
@@ -259,5 +324,4 @@ canvas.addEventListener("wheel", function(ev) {
   }
 
   console.log("zoom = " + 100 * zoom + "%");
-})
-// /!\ /!\ /!\ /!\
+}

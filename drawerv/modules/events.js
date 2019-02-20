@@ -19,6 +19,7 @@ function connect() {
   document.getElementById("delete").addEventListener("click", clearCanvas);
   canvas.addEventListener("mousedown", beginMoving);
   canvas.addEventListener("mouseup", endMoving);
+  canvas.addEventListener("wheel", changeZoom);
 }
 
 // Submit the form for the regular polygon

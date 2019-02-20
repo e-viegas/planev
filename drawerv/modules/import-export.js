@@ -20,6 +20,7 @@ function newfile(ev) {
   maxy = 0;
   id = null;
   moving = null;
+  zoom = 1;
 
   // clear the canvas
   ctx.clearRect(0, 0, width, height);
@@ -67,6 +68,7 @@ function exportJSON(fname) {
   var cont = {
     "origin": {"x": x0, "y": y0},
     "selected": selected,
+    "zoom": zoom,
     "items": items
   };
 

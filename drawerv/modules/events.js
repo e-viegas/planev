@@ -45,13 +45,26 @@ document.getElementById("okExport").addEventListener("click", function() {
 
   // Export according to the type
   if (type === "svg") {
-    exportSVG(fname);
+    exportSVG(htmlEntities(fname));
   } else if (type === "json") {
-    exportJSON(fname);
+    exportJSON(htmlEntities(fname));
+  } else {
+    exportPNG(htmlEntities(fname));
   }
 })
 
 // Cancel the form to export the canvas
 document.getElementById("cancelExport").addEventListener("click", function() {
   document.getElementById("exportpopup").style.visibility = "hidden";
+})
+
+// Submit the form to import the canvas
+document.getElementById("okImport").addEventListener("click", function() {
+  document.getElementById("importpopup").style.visibility = "hidden";
+  handleFileSelect();
+})
+
+// Cancel the form to import the canvas
+document.getElementById("cancelImport").addEventListener("click", function() {
+  document.getElementById("importpopup").style.visibility = "hidden";
 })

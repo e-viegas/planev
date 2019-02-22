@@ -47,6 +47,26 @@
       </div>
     </div>
 
+    <!-- Import -->
+    <div id="importpopup" class="popup">
+      <div class="flex form" id="importform">
+        <div>
+          <label>Choose a file to import : </label>
+          <input type="file" name="fname" value="" id="fileinput">
+        </div>
+
+        <div>
+          <label>Save the current figure : </label>
+          <input type="checkbox" name="save" id="save">
+        </div>
+
+        <div class="okcancel">
+          <input type="button" id="okImport" value="OK">
+          <input type="button" id="cancelImport" value="Cancel">
+        </div>
+      </div>
+    </div>
+
     <!-- Footer -->
     <div class="footer">
       <span><strong>Author</strong> Erwan Viegas | <strong>Licence</strong> CC-BY-NC-ND</span>
@@ -62,7 +82,7 @@
     <!-- Navigation -->
     <div id="header">
       <a id="logo" class="img" href="..">
-        <span class="tooltip">Go back to La Planev</span>
+        <span class="tooltip">Go home</span>
       </a>
 
       <div id="nav">
@@ -76,6 +96,8 @@
   </body>
 
   <!-- Scripts -->
+  <script src="modules/fileSaver.js" charset="utf-8"></script>
+    <!-- https://github.com/eligrey/FileSaver.js/blob/master/src/FileSaver.js -->
   <script src="modules/createmenu.js" charset="utf-8"></script>
   <script src="modules/variables.js" charset="utf-8"></script>
   <script src="modules/functions.js" charset="utf-8"></script>

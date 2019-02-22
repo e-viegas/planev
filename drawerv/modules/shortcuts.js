@@ -53,5 +53,9 @@ function shortcut(ev) {
     deselectAll();
   } else if (ev.key === "a") {
     selectAll();
+  } else if (ev.key === "ArrowRight") {
+    nextTab();
+  } else if (ev.key === "ArrowLeft") {
+    previousTab();
   }
 }

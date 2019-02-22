@@ -16,6 +16,9 @@ var maintabs = document.getElementById("maintabs");
 /* List of buttons, tab by tab */
 var buttons = document.getElementById("buttons");
 
+/* List of tabs */
+var lstTabs = [];
+
 /*
   BRIEF Create a new button (icon and tooltip)
   PARAM bt Object to describe the new button with three fields :
@@ -59,6 +62,7 @@ function createtab(t) {;
   div.appendChild(image);
   span = document.createElement("span");
   span.innerText = t.tab;
+  lstTabs.push(t.tab);
   div.appendChild(span);
   maintabs.appendChild(div);
 }
@@ -68,6 +72,9 @@ function createtab(t) {;
   PARAM content File content parsed as a JSON object
 */
 function mainmenu(content) {
+  var lst;
+  var tooltip;
+
   for (var k = 0; k < content.length; k ++) {
     createtab(content[k]);
     div = document.createElement("div");
@@ -82,6 +89,13 @@ function mainmenu(content) {
   }
 
   activate("DrawErV");
+  lst = document.getElementsByClassName("button");
+
+  // Center the tooltip under the button
+  for (var k = 0; k < lst.length; k ++) {
+    tooltip = lst[k].children[0];
+    tooltip.style.left = (lst[k].offsetLeft + 28 - tooltip.clientWidth/2) + "px";
+  }
 }
 
 /*
@@ -114,5 +128,21 @@ function change(newtab) {
   if (tab !== newtab) {
     deactivate();
     activate(newtab);
+  }
+}
+
+function nextTab() {
+  var k = lstTabs.indexOf(tab);
+
+  if (k + 1 < lstTabs.length) {
+    change(lstTabs[k + 1]);
+  }
+}
+
+function previousTab() {
+  var k = lstTabs.indexOf(tab);
+
+  if (0 <= k - 1) {
+    change(lstTabs[k - 1]);
   }
 }

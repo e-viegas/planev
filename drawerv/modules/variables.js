@@ -59,7 +59,3 @@ var op = null;
 
 // Current zoom (1 -> zoom of 100%)
 var zoom = 1;
-
-// Fill the canvas background
-ctx.fillStyle = "rgb(255, 255, 153)";
-ctx.fillRect(0, 0, width, height);

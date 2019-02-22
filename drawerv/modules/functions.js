@@ -17,6 +17,22 @@ function updateMax(x, y) {
 }
 
 /*
+  BRIEF Escape the special characters to an encoding string in a text
+  PARAM txt Text to escape
+*/
+function htmlEntities(txt) {
+    return String(txt)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&quot;')
+      .replace(/;/g, '')
+      .replace(/ /g, '')
+      .replace('/', '');
+}
+
+/*
   BRIEF Get the current position of the mouse on the canvas
   PARAM ev Current event
   RETURN point with these fields :
@@ -99,10 +115,6 @@ function resize() {
   // Get the new size
   width = canvas.width = canvas.clientWidth;
   height = canvas.height = canvas.clientHeight;
-
-  // Fill canvas background
-  ctx.fillStyle = "rgb(255, 255, 153)";
-  ctx.fillRect(0, 0, width, height);
 
   // Draw all items
   drawall();

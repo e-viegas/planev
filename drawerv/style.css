@@ -1,5 +1,6 @@
 body{
   margin: 0px;
+  background-color: rgb(255, 255, 173);
 }
 
 ::selection {
@@ -100,6 +101,7 @@ a:hover{
   display: flex;
   flex-direction: row;
   height: 0px;
+  background-color: rgb(255, 255, 255);
 }
 
 .button{

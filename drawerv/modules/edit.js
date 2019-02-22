@@ -10,27 +10,30 @@ var selection = {
 
 // ========== DELETE ==========
 /*
-
-
+  BRIEF Check if a point is used to build a shape (polyline, polygon or circle)
+  PARAM idpoint ID for this point to check
 */
 function usedForShapes(idpoint) {
   var shape;
   var res = false;
 
+  // Skip the items except the points
   if (items[idpoint].geometry !== "POINT") {
     return false;
   }
 
   Object.keys(items).forEach(function (key) {
-    shape = items[key];
+    if (selected.indexOf(parseInt(key)) < 0) {
+      shape = items[key];
 
-    if (shape.geometry === "POLYLINE" || shape.geometry === "POLYGON") {
-      if (shape.vertices.indexOf(parseInt(idpoint)) >= 0) {
-        res = true;
-      }
-    } else if (shape.geometry === "CIRCLE") {
-      if (shape.center === parseInt(idpoint)) {
-        res = true;
+      if (shape.geometry === "POLYLINE" || shape.geometry === "POLYGON") {
+        if (shape.vertices.indexOf(parseInt(idpoint)) >= 0) {
+          res = true;
+        }
+      } else if (shape.geometry === "CIRCLE") {
+        if (shape.center === parseInt(idpoint)) {
+          res = true;
+        }
       }
     }
   })
@@ -43,18 +46,20 @@ function usedForShapes(idpoint) {
   PARAM ev Current event
 */
 function clearCanvas(ev) {
+  var temp = [];
+
   // Remove the selection from the set 'items'
   for (var k = 0; k < selected.length; k ++) {
-    if (! usedForShapes(k)) {
+    if (usedForShapes(selected[k])) {
+      temp.push(selected[k]);
+    } else {
       delete items[selected[k]];
     }
   }
 
   // clear the canvas and draw again
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "rgb(255, 255, 153)";
-  ctx.fillRect(0, 0, width, height);
-  selected.length = 0;
+  selected = temp;
   maxx = 0;
   maxy = 0;
   drawall();
@@ -158,8 +163,6 @@ function select() {
 
   // Draw again with the new selection
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "rgb(255, 255, 153)";
-  ctx.fillRect(0, 0, width, height);
   maxx = 0;
   maxy = 0;
   drawall();
@@ -244,8 +247,6 @@ function cursor(ev) {
 function deselectAll() {
   selected.length = 0;
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "rgb(255, 255, 153)";
-  ctx.fillRect(0, 0, width, height);
   maxx = 0;
   maxy = 0;
   drawall();
@@ -264,8 +265,6 @@ function selectAll() {
 
   // draw again
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "rgb(255, 255, 153)";
-  ctx.fillRect(0, 0, width, height);
   maxx = 0;
   maxy = 0;
   drawall();
@@ -292,8 +291,6 @@ function moveCanvas(ev) {
   y0 += pos.y - moving.y;
   moving = pos;
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "rgb(255, 255, 153)";
-  ctx.fillRect(0, 0, width, height);
   maxx = 0;
   maxy = 0;
   drawall();

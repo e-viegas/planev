@@ -1,3 +1,10 @@
+//
+var fr;
+
+//
+var file;
+
+
 // ========= NEW FILE =========
 /*
   BRIEF Reset the workbench to create a new image
@@ -24,8 +31,6 @@ function newfile(ev) {
 
   // clear the canvas
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "rgb(255, 255, 153)";
-  ctx.fillRect(0, 0, width, height);
 
   // reset the selection
   for (var k = 0; k < selected.length; k ++) {
@@ -39,32 +44,19 @@ function newfile(ev) {
   BRIEF Export the figure on the canvas as a SVG image or a JSON text file
     An AJAX request on a PHP script is run
   PARAM ev Current event (unused but mandatory for an event listener)
-  (à terminer)
 */
 function exportCanvas(ev) {
-  var fname;
   endDraw();
   document.getElementById("exportpopup").style.visibility = "visible";
   document.getElementById("fname").value = name;
   document.getElementById("ext").value = "json";
-
-  // png
-  /* context.clearRect(0, 0, width, height);
-  var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); //Convert image to 'octet-stream' (Just a download, really)
-  window.location.href = img;*/
 }
 
 /*
   BRIEF Export the figure on the canvas as a JSON text file
-  PARAM filename Name of the file
+  PARAM fname Name of the file
 */
 function exportJSON(fname) {
-  ajax.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(ajax.responseText);
-    }
-  };
-
   var cont = {
     "origin": {"x": x0, "y": y0},
     "selected": selected,
@@ -72,10 +64,12 @@ function exportJSON(fname) {
     "items": items
   };
 
-  var url = "download.php?fname=" + fname
-    + "&cont=" + JSON.stringify(cont);
-  ajax.open("GET", url, true);
-  ajax.send();
+  var blob = new Blob(
+    [JSON.stringify(cont)],
+    {type: "application/json;charset=utf-8"}
+  );
+
+  saveAs(blob, fname);
 }
 
 /*
@@ -83,7 +77,7 @@ function exportJSON(fname) {
   PARAM filename Name of the file
 */
 function exportSVG(fname) {
-  // console.log(JSON.stringify(items));
+  var blob;
   var svg = "<svg width=\"" + (maxx + 8) + "\" height=\"" + (maxy + 8) + "\">\n";
 
   Object.keys(items).forEach(function (key) {
@@ -112,40 +106,84 @@ function exportSVG(fname) {
     }
   })
 
+  // Download the file
   svg += "</svg>";
+  blob = new Blob([svg], {type: "image/svg+xml;charset=utf-8"});
+  saveAs(blob, fname);
+}
 
-  ajax.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      window.open("./files/" + fname, "_blank");
-      // remove the temporary file
-    }
-  };
-
-  var url = "download.php?fname=" + fname + "&cont=" + svg;
-  ajax.open("GET", url, true);
-  ajax.send();
+/*
+  /!\ to finish /!\
+  /!\ Downloaded image is not readable /!\
+*/
+function exportPNG(fname) {
+  var img = canvas.toDataURL("image/png");
+  var blob = new Blob([img], {type: "image/png"});
+  saveAs(blob, fname);
 }
 
 
 // ========= IMPORT =========
 /*
+  BRIEF Open and load file contents
+*/
+function handleFileSelect(){
+  var input, type;
+
+  if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
+    alert("The File APIs are not fully supported in this browser.");
+    return;
+  }
+
+  // Check if the file exists
+  input = document.getElementById("fileinput");
+  if (!input) {
+    alert("It couldn't find the fileinput element.");
+  } else if (!input.files || input.files[0] < 1) {
+    alert("This browser doesn't seem to support the `files` property of file inputs.");
+  } else {
+    // Read the file
+    file = input.files[0];
+    type = file.name.split(".")[1];
+
+    if (type === "json" || type === "svg" || type === "png") {
+      // Valid extension
+      fr = new FileReader();
+      fr.onload = receivedText;
+      fr.readAsText(file);
+    } else {
+      // Invalid extension
+      alert("File refused because of its extension")
+    }
+  }
+}
+
+/*
+  BRIEF Import the canvas according to the loaded contents
+*/
+function receivedText() {
+  var type = file.name.split(".")[1];
+  name = file.name.split(".")[0];
+  // console.log(document.getElementById("save").checked);
+
+  if (type === "svg") {
+    importSVG(fr.result);
+  } else if (type === "json") {
+    importJSON(fr.result);
+  } else {
+    console.log("png");
+  }
+}
+
+/*
   BRIEF Import a figure on the canvas with a SVG image or a JSON text file
   PARAM ev Current event (unused but mandatory for an event listener)
 */
 function importCanvas(ev) {
-  type = "svg";
+  document.getElementById("importpopup").style.visibility = "visible";
+  document.getElementById("fileinput").value = "";
+  document.getElementById("save").checked = false;
   endDraw();
-
-  // contents = "{\"0\":{\"geometry\":\"POINT\",\"x\":260,\"y\":160.5}}";
-  contents = "<svg width=\"291\" height=\"236.5\"><polygon "
-    + "points=\"170,146.5 253,228.5 283,116\" "
-    + "style=\"fill:none;stroke:black;stroke-width:1\"/></svg>"
-
-  if (type === "svg") {
-    importSVG(contents);
-  } else {
-    importJSON(contents);
-  }
 }
 
 /*
@@ -155,11 +193,17 @@ function importCanvas(ev) {
 function importJSON(json) {
   var temp = JSON.parse(json);
 
-  Object.keys(temp).forEach(function (key) {
-    items[index] = temp[key];
-    index += 1;
+  // Fill the set 'items'
+  Object.keys(temp.items).forEach(function (key) {
+    items[parseInt(key)] = temp.items[key];
+    index = parseInt(key) + 1;
   })
 
+  // Set the variables and draw the items
+  x0 = temp.origin.x;
+  y0 = temp.origin.y;
+  selected = temp.selected;
+  zoom = temp.zoom;
   drawall();
 }
 
@@ -201,7 +245,7 @@ function importPolygon(polygons) {
   BRIEF Import a polyline list on the canvas with a SVG image
   PARAM polylines Polyline list to import
 */
-function importPolylines(polylines) {
+function importPolyline(polylines) {
   var vertices = null;
 
   for (var k = 0; k < polylines.length; k ++) {

@@ -16,6 +16,10 @@
         "name": "Export",
         "id": "export",
         "icon": "./resources/export.png"
+      },{
+        "name": "Help",
+        "id": "help",
+        "icon": "./resources/information.png"
       }
     ]
   }, {

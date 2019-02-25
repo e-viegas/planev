@@ -354,5 +354,7 @@ function lookForClosestLine(pos) {
   PARAM ev Current event
 */
 function help(ev) {
+  document.getElementById("help").style.backgroundColor = "rgb(226, 226, 226)";
+  document.getElementById("help").style.boxShadow = "0px 5px 5px rgb(173, 173, 173)";
   document.getElementById("helppopup").style.visibility = "visible";
 }

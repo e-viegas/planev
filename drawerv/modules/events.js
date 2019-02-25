@@ -74,6 +74,8 @@ document.getElementById("cancelImport").addEventListener("click", function() {
 document.getElementById("helppopup").addEventListener("click", function(ev) {
   if (ev.target.id === "helppopup") {
     // Outside
+    document.getElementById("help").style.backgroundColor = "";
+    document.getElementById("help").style.boxShadow = "";
     document.getElementById("helppopup").style.visibility = "";
   }
 })

@@ -9,6 +9,7 @@ function connect() {
   document.getElementById("new").addEventListener("click", newfile);
   document.getElementById("export").addEventListener("click", exportCanvas);
   document.getElementById("import").addEventListener("click", importCanvas);
+  document.getElementById("help").addEventListener("click", help);
   document.getElementById("point").addEventListener("click", addPoint);
   document.getElementById("polyline").addEventListener("click", addPolyline);
   document.getElementById("polygon").addEventListener("click", addPolygon);
@@ -67,4 +68,12 @@ document.getElementById("okImport").addEventListener("click", function() {
 // Cancel the form to import the canvas
 document.getElementById("cancelImport").addEventListener("click", function() {
   document.getElementById("importpopup").style.visibility = "hidden";
+})
+
+// Close the help in clicking out of the help box
+document.getElementById("helppopup").addEventListener("click", function(ev) {
+  if (ev.target.id === "helppopup") {
+    // Outside
+    document.getElementById("helppopup").style.visibility = "";
+  }
 })

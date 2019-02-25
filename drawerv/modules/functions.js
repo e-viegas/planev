@@ -346,3 +346,13 @@ function lookForClosestLine(pos) {
 
   return finalpos;
 }
+
+
+// ========== HELP ==========
+/*
+  BRIEF Display the documentation
+  PARAM ev Current event
+*/
+function help(ev) {
+  document.getElementById("helppopup").style.visibility = "visible";
+}

@@ -169,7 +169,7 @@ canvas{
   visibility: hidden;
 }
 
-.form{
+.form, #helpcontents{
   background-color: white;
   flex-direction: column;
   border-color: black;
@@ -190,6 +190,18 @@ canvas{
 
 .okcancel input{
   width: 73px;
+}
+
+/* Help */
+#helpcontents{
+  width: 73%;
+  height: 73%;
+  overflow-y: scroll;
+}
+
+#helpcontents *{
+  width: 95%;
+  margin: 8px;
 }
 
 /* Footer */
